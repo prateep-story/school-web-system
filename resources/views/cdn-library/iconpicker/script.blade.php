@@ -1,0 +1,1 @@
+<script src="{{ asset('https://cdnjs.cloudflare.com/ajax/libs/bootstrap-iconpicker/1.10.0/js/bootstrap-iconpicker.bundle.min.js')}}"></script>
