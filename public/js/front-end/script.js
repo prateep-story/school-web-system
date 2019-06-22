@@ -8,7 +8,10 @@ $(function () {
 
 new WOW().init();
 
-document.getElementById("datetime").innerHTML = moment().locale('th').format('LLLL');
+$(function () {
+  moment.locale('th');
+  $('#datetime').html(moment().format('LLLL'));
+})
 
 jQuery(window).scroll(function(){
   if (jQuery(this).scrollTop() > 300) {

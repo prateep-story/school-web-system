@@ -280,7 +280,7 @@
                     <div class="table-responsive wow fadeIn">
                         <table class="table">
                             <tbody>
-                                @foreach ($files->sortByDesc('created_at')->slice(0,6) as $key => $file)
+                                @foreach ($files->sortByDesc('created_at')->slice(0,5) as $key => $file)
                                 <tr>
                                     <td>
                                         <h5 class="mb-0">{{$file->title}}</h5>
