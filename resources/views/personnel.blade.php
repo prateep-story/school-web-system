@@ -27,29 +27,29 @@
     <div class="row">
       <div class="col-md-12">
         <div class="card">
-          <div class="row ">
-            <div class="col-md-2">
-              <img class="card-img-top img-fluid wow fadeInUp" src="{{ asset('images/personnels/'.$personnel->image)}}"
+          <div class="row justify-content-center">
+            <div class="col-md-2 col-6 ">
+              <img class="card-img-top img-fluid mb-3 wow fadeInUp" src="{{ asset('images/personnels/'.$personnel->image)}}"
                 alt="{{$personnel->name}}">
             </div>
-            <div class="col-md-10">
+            <div class="col-md-10 col-12">
               <div class="card-block wow fadeInUp">
                 <dl class="row">
-                  <dt class="col-sm-2">ชื่อ-สกุล :</dt>
-                  <dd class="col-sm-10">{{$personnel->name}}</dd>
-                  <dt class="col-sm-2">ตำแหน่ง :</dt>
-                  <dd class="col-sm-10">{{$personnel->position.$personnel->accredit}}</dd>
-                  <dt class="col-sm-2">วุฒิการศึกษา :</dt>
-                  <dd class="col-sm-10">{{$personnel->qualification}}</dd>
-                  <dt class="col-sm-2">วิชาเอก :</dt>
-                  <dd class="col-sm-10">{{$personnel->major}}</dd>
+                  <dt class="col-sm-2 col-4">ชื่อ-สกุล :</dt>
+                  <dd class="col-sm-10 col-8">{{$personnel->name}}</dd>
+                  <dt class="col-sm-2 col-4">ตำแหน่ง :</dt>
+                  <dd class="col-sm-10 col-8">{{$personnel->position.$personnel->accredit}}</dd>
+                  <dt class="col-sm-2 col-4">วุฒิการศึกษา :</dt>
+                  <dd class="col-sm-10 col-8">{{$personnel->qualification}}</dd>
+                  <dt class="col-sm-2 col-4">วิชาเอก :</dt>
+                  <dd class="col-sm-10 col-8">{{$personnel->major}}</dd>
                   @if ($personnel->tel)
-                  <dt class="col-sm-2">เบอร์โทรศัพท์ :</dt>
-                  <dd class="col-sm-10">{{$personnel->tel}}</dd>
+                  <dt class="col-sm-2 col-4">เบอร์โทรศัพท์ :</dt>
+                  <dd class="col-sm-10 col-8">{{$personnel->tel}}</dd>
                   @endif
                   @if ($personnel->email)
-                  <dt class="col-sm-2">อีเมล์ :</dt>
-                  <dd class="col-sm-10">{{$personnel->email}}</dd>
+                  <dt class="col-sm-2 col-4">อีเมล์ :</dt>
+                  <dd class="col-sm-10 col-8">{{$personnel->email}}</dd>
                   @endif
                 </dl>
               </div>

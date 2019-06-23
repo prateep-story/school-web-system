@@ -32,7 +32,7 @@
                         <h2 class="card-text text-center mb-3 wow fadeInUp">{{ $course->course }}</h2>
                         <div class="row justify-content-center">
                             @foreach ($personnels->where('course_id', $course->id)->where('course_level', 'หัวหน้า') as $personnel)
-                            <div class="card col-md-4 col-12 wow fadeInUp">
+                            <div class="card col-md-4 col-6 wow fadeInUp">
                                 <img class="card-img-top img-fluid mx-auto" src="{{ asset('images/personnels/'.$personnel->image)}}" alt="{{$personnel->name}}" style=" width: 50%">
                                 <div class="card-body ">
                                     <h4 class="card-title text-center"><a href="{{url('บุคลากร/'.$personnel->slug)}}">{{$personnel->name}}</a> </h4>
@@ -41,7 +41,7 @@
                             </div>
                             @endforeach
                             @foreach ($personnels->where('course_id', $course->id)->where('course_level', 'รองหัวหน้า') as $personnel)
-                            <div class="card col-md-4 col-12 wow fadeInUp">
+                            <div class="card col-md-4 col-6 wow fadeInUp">
                                 <img class="card-img-top img-fluid mx-auto" src="{{ asset('images/personnels/'.$personnel->image)}}" alt="{{$personnel->name}}" style=" width: 50%">
                                 <div class="card-body ">
                                     <h4 class="card-title text-center"><a href="{{url('บุคลากร/'.$personnel->slug)}}">{{$personnel->name}}</a> </h4>
@@ -53,7 +53,7 @@
                         </div>
                         <div class="row justify-content-start">
                             @foreach ($personnels->where('course_id', $course->id)->where('course_level', 'ครูผู้สอน') as $personnel)
-                            <div class="card col-md-4 col-12 wow fadeInUp">
+                            <div class="card col-md-4 col-6 wow fadeInUp">
                                 <img class="card-img-top img-fluid mx-auto" src="{{ asset('images/personnels/'.$personnel->image)}}" alt="{{$personnel->name}}" style=" width: 50%">
                                 <div class="card-body ">
                                     <h4 class="card-title text-center"><a href="{{url('บุคลากร/'.$personnel->slug)}}">{{$personnel->name}}</a> </h4>

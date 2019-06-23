@@ -32,7 +32,7 @@
                         <h2 class="card-text text-center mb-3 wow fadeInUp">{{$department->department}}</h2>
                         <div class="row justify-content-center">
                             @foreach ($personnels->where('position', 'ผู้อำนวยการโรงเรียน') as $personnel)
-                            <div class="card col-md-4 col-12 wow fadeInUp">
+                            <div class="card col-md-4 col-6 wow fadeInUp">
                                 <img class="card-img-top img-fluid mx-auto d-block" src="{{ asset('images/personnels/'.$personnel->image)}}" alt="{{$personnel->name}}" style=" width: 50%">
                                 <div class="card-body ">
                                     <h4 class="card-title text-center"><a href="{{url('บุคลากร/'.$personnel->slug)}}">{{$personnel->name}}</a> </h4>
@@ -43,7 +43,7 @@
                         </div>
                         <div class="row justify-content-center">
                             @foreach ($personnels->where('department_id', $department->id)->where('position', 'รองผู้อำนวยการโรงเรียน') as $personnel)
-                            <div class="card col-md-4 col-12 wow fadeInUp">
+                            <div class="card col-md-4 col-6 wow fadeInUp">
                                 <img class="card-img-top img-fluid mx-auto d-block" src="{{ asset('images/personnels/'.$personnel->image)}}" alt="{{$personnel->name}}" style=" width: 50%">
                                 <div class="card-body ">
                                     <h4 class="card-title text-center"><a href="{{url('บุคลากร/'.$personnel->slug)}}">{{$personnel->name}}</a> </h4>
@@ -52,7 +52,7 @@
                             </div>
                             @endforeach
                             @foreach ($personnels->where('department_id', $department->id)->where('department_level', 'หัวหน้า') as $personnel)
-                            <div class="card col-md-4 col-12 wow fadeInUp">
+                            <div class="card col-md-4 col-6 wow fadeInUp">
                                 <img class="card-img-top img-fluid mx-auto d-block" src="{{ asset('images/personnels/'.$personnel->image)}}" alt="{{$personnel->name}}" style=" width: 50%">
                                 <div class="card-body ">
                                     <h4 class="card-title text-center"><a href="{{url('บุคลากร/'.$personnel->slug)}}">{{$personnel->name}}</a> </h4>
@@ -61,7 +61,7 @@
                             </div>
                             @endforeach
                             @foreach ($personnels->where('department_id', $department->id)->where('department_level', 'รองหัวหน้า') as $personnel)
-                            <div class="card col-md-4 col-12 wow fadeInUp">
+                            <div class="card col-md-4 col-6 wow fadeInUp">
                                 <img class="card-img-top img-fluid mx-auto d-block" src="{{ asset('images/personnels/'.$personnel->image)}}" alt="{{$personnel->name}}" style=" width: 50%">
                                 <div class="card-body ">
                                     <h4 class="card-title text-center"><a href="{{url('บุคลากร/'.$personnel->slug)}}">{{$personnel->name}}</a> </h4>
@@ -72,7 +72,7 @@
                         </div>
                         <div class="row justify-content-start">
                             @foreach ($personnels->where('department_id', $department->id)->where('department_level', 'กรรมการ') as $personnel)
-                            <div class="card col-md-4 col-12 wow fadeInUp">
+                            <div class="card col-md-4 col-6 wow fadeInUp">
                                 <img class="card-img-top img-fluid mx-auto d-block" src="{{ asset('images/personnels/'.$personnel->image)}}" alt="{{$personnel->name}}" style=" width: 50%">
                                 <div class="card-body ">
                                     <h4 class="card-title text-center"><a href="{{url('บุคลากร/'.$personnel->slug)}}">{{$personnel->name}}</a> </h4>
@@ -81,7 +81,7 @@
                             </div>
                             @endforeach
                             @foreach ($personnels->where('department_id', $department->id)->where('department_level', 'กรรมการ/เลขานุการ') as $personnel)
-                            <div class="card col-md-4 col-12 wow fadeInUp">
+                            <div class="card col-md-4 col-6 wow fadeInUp">
                                 <img class="card-img-top img-fluid mx-auto d-block" src="{{ asset('images/personnels/'.$personnel->image)}}" alt="{{$personnel->name}}" style=" width: 50%">
                                 <div class="card-body ">
                                     <h4 class="card-title text-center"><a href="{{url('บุคลากร/'.$personnel->slug)}}">{{$personnel->name}}</a> </h4>
