@@ -4,6 +4,11 @@
 }
 
 @font-face {
+    font-family: 'pgvim';
+    src: url('../../../fonts/pgvim-webfont.woff2') format('woff2');
+}
+
+@font-face {
     font-family: 'csprajad';
     src: url('../../../fonts/csprajad-webfont.woff2') format('woff2');
 }
@@ -13,12 +18,11 @@ body {
     line-height: 1.5;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
+h1, h2, h3{
+    font-family: 'pgvim', sans-serif;
+}
+
+h4, h5, h6 {
     font-family: 'sukhumvit', sans-serif;
 }
 

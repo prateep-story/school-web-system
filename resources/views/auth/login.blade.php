@@ -50,7 +50,7 @@
         <button class="btn btn-primary btn-block" type="submit">เข้าสู่ระบบ</button>
       </div>
       <div class="form-group mt-1 text-center">
-          <small class="text-primary text-center">หากพบปัญหาเข้าใช้งาน ติดต่อ 085-3469543</small>
+          <small class="text-primary text-center">หากพบปัญหาเข้าใช้งาน ติดต่อ 085-3469543 (นก)</small>
         </div>
     </form>
 

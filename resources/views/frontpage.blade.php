@@ -237,8 +237,8 @@
                     <img class="img-fluid mx-auto d-block" src="{{ asset('images/personnels/'.$personnel->image)}}"
                         alt="{{$personnel->name}}">
                     <div class="card-body">
-                        <p class="card-title text-center">{{$personnel->name}}</p>
-                        <p class="card-text text-center">{{"(".$personnel->position.")"}}</p>
+                        <p class="card-title text-center mb-0">{{$personnel->name}}</p>
+                        <p class="card-text text-center mb-0">{{"(".$personnel->position.")"}}</p>
                     </div>
                     @endforeach
                 </div>

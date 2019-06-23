@@ -3177,7 +3177,7 @@
                 },
                 {
                     "name": "Gert de Pagter",
-                    "email": "BackEndTea@gmail.com"
+                    "email": "backendtea@gmail.com"
                 }
             ],
             "description": "Symfony polyfill for ctype functions",
@@ -3877,16 +3877,16 @@
         },
         {
             "name": "tightenco/collect",
-            "version": "v5.8.23",
+            "version": "v5.8.24",
             "source": {
                 "type": "git",
                 "url": "https://github.com/tightenco/collect.git",
-                "reference": "1acfa2e6829e3db6fe9aaa27373efff11ba23c1e"
+                "reference": "e337c893ab904e383be1dfc2568a185fab20ab43"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/tightenco/collect/zipball/1acfa2e6829e3db6fe9aaa27373efff11ba23c1e",
-                "reference": "1acfa2e6829e3db6fe9aaa27373efff11ba23c1e",
+                "url": "https://api.github.com/repos/tightenco/collect/zipball/e337c893ab904e383be1dfc2568a185fab20ab43",
+                "reference": "e337c893ab904e383be1dfc2568a185fab20ab43",
                 "shasum": ""
             },
             "require": {
@@ -3923,7 +3923,7 @@
                 "collection",
                 "laravel"
             ],
-            "time": "2019-06-06T14:01:55+00:00"
+            "time": "2019-06-21T13:36:56+00:00"
         },
         {
             "name": "tijsverkoyen/css-to-inline-styles",
