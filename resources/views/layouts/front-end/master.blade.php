@@ -20,7 +20,7 @@
 </head>
 
 <body>
-  <span class="preloader"></span>
+  {{-- <span class="preloader"></span> --}}
   <nav class="navbar navbar-expand-lg navbar-dark d-none d-lg-block topbar wow fadeInDown">
     <div class="container">
       <div class="collapse navbar-collapse">
@@ -101,7 +101,7 @@
               {{$category->category}}
             </a>
             <div class="dropdown-menu" aria-labelledby="information">
-              @foreach ($category->articles as $article)
+              @foreach ($category->articles->where('status','1') as $article)
               <a class="dropdown-item"
                 href="{{ url('อ่าน/'.$article->category->slug.'/'.$article->slug)}}">{{$article->article}}</a>
               @endforeach
@@ -188,7 +188,7 @@
                 <li>อีเมล์ info@pslt.ac.th เว็บไซต์ www.pslt.ac.th</li>
                 <li>
                   <i class="fas fa-chart-bar"></i> จำนวนผู้เข้าชมเว็บไซต์
-                  <a class="text-light" href="#" data-toggle="modal" data-target="#visitor">{{$visitors}}</a>
+                  <a class="text-light" href="#" data-toggle="modal" data-target="#visitor">{{$visitors}} (เริ่มนับ 21/06/2562)</a>
                 </li>
                 <li>
                   <a href="https://www.facebook.com/Pangsilathongsuksa-School-147507345343192/"
