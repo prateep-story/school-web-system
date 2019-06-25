@@ -28,13 +28,13 @@
             <div class="col-md-12">
                 @foreach ($awards->sortByDesc('created_at') as $key => $award)
                 <a href="{{url('รางวัล/'.$award->slug)}}">
-                    <div class="col-md-4 col-12 mb-1 wow fadeInUp">
+                    <div class="col-md-4 col-12 mb-1 wow fadeIn">
                         <div class="card">
                             <div class="thumbnail">
                                 <img class="card-img-top" src="{{asset('images/thumbnails/'.$award->image)}}" alt="{{$award->title}}">
                             </div>
                             <div class="card-body">
-                                <ul class="list-inline small wow fadeInUp">
+                                <ul class="list-inline small wow fadeIn">
                                     <li class="list-inline-item"><i class="far fa-clock"></i> {{date_th($award->created_at)}}</li>
                                     <li class="list-inline-item"><i class="far fa-user"></i> {{$award->user->name}}</li>
                                     <li class="list-inline-item"><i class="fas fa-trophy"></i> {{$award->portfolio->portfolio}}</li>
@@ -47,7 +47,7 @@
                     </div>
                 </a>
                 @endforeach
-                <div class="d-flex justify-content-center mb-3 wow fadeInUp">
+                <div class="d-flex justify-content-center mb-3 wow fadeIn">
                     {{ $awards->links() }}
                 </div>
             </div>

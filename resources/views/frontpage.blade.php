@@ -6,7 +6,7 @@
 
 @section('content')
 @isset($highlights)
-<div id="highlight" class="carousel slide wow fadeInUp" data-ride="carousel">
+<div id="highlight" class="carousel slide wow fadeIn" data-ride="carousel">
     <ol class="carousel-indicators">
         @foreach ($highlights->where('status','1') as $key => $value)
         <li data-target="#highlight" data-slide-to="{{ $loop->index }}" class="{{ $loop->first ? 'active' : ''}}"></li>
@@ -45,7 +45,7 @@
 </div>
 @endisset
 @isset($feed)
-<section id="breaking-news" class="d-none d-lg-block wow fadeInUp">
+<section id="breaking-news" class="d-none d-lg-block wow fadeIn">
     <div class="container-fluid">
         <div class="row mb-5">
             <div class="col-12 py-4 bg-dark">
@@ -97,7 +97,7 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="box-news">
-                    <div class="header wow fadeInUp">
+                    <div class="header wow fadeIn">
                         <a href="{{ url('ข่าวทั้งหมด')}}" class="pull-right view-all">ดูทั้งหมด <span class="icon"><i
                                     class="fas fa-chevron-right faa-passing animated fa-1x"></i></span></a>
                         <h1><span class="title-head">ข่าว</span>ประชาสัมพันธ์</h1>
@@ -105,7 +105,7 @@
                     <div class="row">
                         @foreach ($articles->slice(0, 6) as $key => $article)
                         <a href="{{ url('อ่าน/'.$article->category.'/'.$article->slug)}}">
-                            <div class="col-md-4 col-12 mb-1 wow fadeInUp">
+                            <div class="col-md-4 col-12 mb-1 wow fadeIn">
                                 <div class="card ">
                                     <div class="thumbnail">
                                         <img class="card-img-top"
@@ -145,7 +145,7 @@
         <div class="row">
             <div class="col-md-8">
                 <div class="box-news">
-                    <div class="header wow fadeInUp">
+                    <div class="header wow fadeIn">
                         <a href="{{ url('ภาพกิจกรรมทั้งหมด')}}" class="pull-right view-all">ดูทั้งหมด <span
                                 class="icon"><i class="fas fa-chevron-right faa-passing animated fa-1x"></i></span></a>
                         <h1><span class="title-head">ภาพ</span>กิจกรรม</h1>
@@ -153,7 +153,7 @@
                     <div class="row">
                         @foreach ($galleries->sortByDesc('created_at')->slice(0,4) as $key => $gallery)
                         <a href="{{ url('ภาพกิจกรรม/'.$gallery->slug)}}">
-                            <div class="col-md-6 col-12 mb-1 mb-2 wow fadeInUp">
+                            <div class="col-md-6 col-12 mb-1 mb-2 wow fadeIn">
                                 <div class="card ">
                                     <div class="thumbnail">
                                         <img class="card-img-top" src="{{ asset('images/thumbnails/'.$gallery->image)}}"
@@ -188,13 +188,13 @@
             </div>
             <div class="col-md-4" id="events">
                 <div class="box-news">
-                    <div class="header wow fadeInUp">
+                    <div class="header wow fadeIn">
                         <a href="{{ url('กิจกรรมทั้งหมด')}}" class="pull-right view-all">ดูทั้งหมด <span class="icon"><i
                                     class="fas fa-chevron-right faa-passing animated fa-1x"></i></span></a>
                         <h1><span class="title-head">ปฏิทิน</span>กิจกรรม</h1>
                     </div>
                     @foreach ($events->sortByDesc('start_date')->slice(0, 5) as $key => $event)
-                    <div class="row row-striped Right wow fadeInUp">
+                    <div class="row row-striped Right wow fadeIn">
                         <div class="col-4 text-left">
                             <div class="list-group text-center">
                                 <h4 class="list-group-item list-group-item-action"
@@ -232,7 +232,7 @@
     <div class="parallax-message">
         <div class="container">
             <div class="row py-5">
-                <div class="col-md-2 wow fadeInUp">
+                <div class="col-md-2 wow fadeIn">
                     @foreach ($personnels->where('position', 'ผู้อำนวยการโรงเรียน') as $personnel)
                     <img class="img-fluid mx-auto d-block" src="{{ asset('images/personnels/'.$personnel->image)}}"
                         alt="{{$personnel->name}}">
@@ -242,7 +242,7 @@
                     </div>
                     @endforeach
                 </div>
-                <div class="col-sm-10 wow fadeInUp">
+                <div class="col-sm-10 wow fadeIn">
                     <div class="carousel-controls message-carousel-controls">
                         <div class="message-carousel ">
                             @foreach ($messages->where('status','1') as $message)
@@ -272,7 +272,7 @@
         <div class="row">
             <div class="col-md-6">
                 <div class="box-news">
-                    <div class="header wow fadeInUp">
+                    <div class="header wow fadeIn">
                         <a href="{{ url('ไฟล์เอกสารทั้งหมด/')}}" class="pull-right view-all">ดูทั้งหมด <span
                                 class="icon"><i class="fas fa-chevron-right faa-passing animated fa-1x"></i></span></a>
                         <h1><span class="title-head">ดาวน์</span>โหลด</h1>
@@ -302,7 +302,7 @@
             </div>
             <div class="col-md-6">
                 <div class="box-news">
-                    <div class="header wow fadeInUp">
+                    <div class="header wow fadeIn">
                         <a class="view-all mx-2" href="#guidance" role="button" data-slide="next">
                             <span class="icon"><i
                                     class="fas fa-chevron-right faa-passing animated fa-1x"></i></span></a>
@@ -313,7 +313,7 @@
                         </a>
                         <h1><span class="title-head">แนะแนว</span>การศึกษา</h1>
                     </div>
-                    <div id="guidance" class="carousel slide wow fadeInUp" data-ride="carousel">
+                    <div id="guidance" class="carousel slide wow fadeIn" data-ride="carousel">
                         <div class="carousel-inner">
                             @foreach ($guidances->where('status','1') as $guidance)
                             <div class="carousel-item {{ $loop->first ? 'active' : ''}}">
@@ -340,7 +340,7 @@
     <div class="parallax-info">
         <div class="container">
             <div class="row">
-                <div class="col-md-6 wow fadeInUp">
+                <div class="col-md-6 wow fadeIn">
                     <div class="pt-5">
                         <h1>วิสัยทัศน์</h1>
                         <blockquote>
@@ -353,7 +353,7 @@
                 <div class="col-md-6 ">
                     <div class="row text-center couter-item py-5" id="counter">
                         @foreach ($counters as $key => $counter)
-                        <div class="col-md-{{12/$counters->count()}} col-4 wow fadeInUp">
+                        <div class="col-md-{{12/$counters->count()}} col-4 wow fadeIn">
                             <div class="icon">
                                 <i class="{{$counter->icon}} fa-3x"></i>
                             </div>
@@ -373,7 +373,7 @@
         <div class="row">
             <div class="col-md-6">
                 <div class="box-news">
-                    <div class="header wow fadeInUp">
+                    <div class="header wow fadeIn">
                         <a href="{{ url('เกียรติประวัติ')}}" class="pull-right view-all">ดูทั้งหมด <span class="icon"><i
                                     class="fas fa-chevron-right faa-passing animated fa-1x"></i></span></a>
                         <h1><span class="title-head">ความ</span>ภาคภูมิใจ</h1>
@@ -406,13 +406,13 @@
             </div>
             <div class="col-md-6">
                 <div class="box-news">
-                    <div class="header wow fadeInUp">
+                    <div class="header wow fadeIn">
                         <a href="{{ url('งานวิจัยทั้งหมด/')}}" class="pull-right view-all">ดูทั้งหมด <span
                                 class="icon"><i class="fas fa-chevron-right faa-passing animated fa-1x"></i></span></a>
                         <h1><span class="title-head">ผลงาน</span>ทางวิชาการ</h1>
                     </div>
                     @foreach ($researches->sortByDesc('created_at')->slice(0, 5) as $key => $research)
-                    <div class="clearfix Right mb-2 wow fadeInUp">
+                    <div class="clearfix Right mb-2 wow fadeIn">
                         <h5 class="mb-0"> <a href="{{ url('งานวิจัย/'.$research->slug)}}">
                                 @if ($loop->first)
                                 <i class="fas fa-award faa-tada animated"> </i>
@@ -437,7 +437,7 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="box-news">
-                    <div class="header wow fadeInUp">
+                    <div class="header wow fadeIn">
                         <a class="view-all mx-2" href="#other-link" role="button" data-slide="next">
                             <span class="icon"><i
                                     class="fas fa-chevron-right faa-passing animated fa-1x"></i></span></a>

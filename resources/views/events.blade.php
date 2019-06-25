@@ -29,7 +29,7 @@
   <div class="container box">
     <div class="row">
       <div class="col-md-12">
-        <div class="card wow fadeInUp" id="article">
+        <div class="card wow fadeIn" id="article">
           <div class="card-body">
             {!! $calendar->calendar() !!}
           </div>
@@ -39,7 +39,7 @@
         <div class="row">
           @foreach ($cards as $key => $event)
           <div class="col-md-4">
-            <div class="row row-striped wow fadeInUp">
+            <div class="row row-striped wow fadeIn">
               <div class="col-4 text-left">
                 <div class="list-group text-center">
                   <h4 class="list-group-item list-group-item-action" style="background-color: {{$event->color}}; color: #fff;">
@@ -78,7 +78,7 @@
           </div>
           @endforeach
         </div>
-        <div class="d-flex justify-content-center mb-3 wow fadeInUp">
+        <div class="d-flex justify-content-center mb-3 wow fadeIn">
           {{ $cards->links() }}
         </div>
       </div>

@@ -31,16 +31,16 @@
         <div class="card mb-3" id="research">
           <div class="card-body">
             <dl class="row">
-              <dt class="col-sm-2 wow fadeInUp">ชื่องานวิจัย :</dt>
-              <dd class="col-sm-10 wow fadeInUp">{{$research->research}}</dd>
-              <dt class="col-sm-2 wow fadeInUp">ผู้วิจัย :</dt>
-              <dd class="col-sm-10 wow fadeInUp"><a href="{{url('บุคลากร/'.$research->personnel->slug)}}">{{$research->personnel->name}}</a></dd>
-              <dt class="col-sm-2 wow fadeInUp">ปีที่ศึกษา :</dt>
-              <dd class="col-sm-10 wow fadeInUp">{{$research->year+543}}</dd>
-              <dt class="col-sm-2 wow fadeInUp">บทคัดย่อ :</dt>
-              <dd class="col-sm-10 wow fadeInUp">{!! $research->abstract !!}</dd>
-              <dt class="col-sm-2 wow fadeInUp">ผลการวิจัย :</dt>
-              <dd class="col-sm-10 wow fadeInUp">{!! $research->result !!}</dd>
+              <dt class="col-sm-2 wow fadeIn">ชื่องานวิจัย :</dt>
+              <dd class="col-sm-10 wow fadeIn">{{$research->research}}</dd>
+              <dt class="col-sm-2 wow fadeIn">ผู้วิจัย :</dt>
+              <dd class="col-sm-10 wow fadeIn"><a href="{{url('บุคลากร/'.$research->personnel->slug)}}">{{$research->personnel->name}}</a></dd>
+              <dt class="col-sm-2 wow fadeIn">ปีที่ศึกษา :</dt>
+              <dd class="col-sm-10 wow fadeIn">{{$research->year+543}}</dd>
+              <dt class="col-sm-2 wow fadeIn">บทคัดย่อ :</dt>
+              <dd class="col-sm-10 wow fadeIn">{!! $research->abstract !!}</dd>
+              <dt class="col-sm-2 wow fadeIn">ผลการวิจัย :</dt>
+              <dd class="col-sm-10 wow fadeIn">{!! $research->result !!}</dd>
             </dl>
           </div>
         </div>

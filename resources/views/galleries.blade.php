@@ -31,7 +31,7 @@
             <div class="row">
               @foreach ($galleries as $gallery)
                 <a href="{{ url('ภาพกิจกรรม/'.$gallery->slug)}}">
-                    <div class="col-md-4 col-12 mb-1 wow fadeInUp">
+                    <div class="col-md-4 col-12 mb-1 wow fadeIn">
                         <div class="card">
                             <div class="thumbnail">
                                 <img class="card-img-top" src="{{ asset('images/thumbnails/'.$gallery->image)}}" alt="{{$gallery->gallery}}">
@@ -41,7 +41,7 @@
                                 </div>
                             </div>
                             <div class="card-body">
-                                <ul class="list-inline small wow fadeInUp">
+                                <ul class="list-inline small wow fadeIn">
                                     <li class="list-inline-item"><i class="far fa-user"></i> {{$gallery->user->name}}</li>
                                     <li class="list-inline-item"><i class="far fa-images"></i> {{$gallery->pictures->count()}}</li>
                                     <li class="list-inline-item"><i class="far fa-eye"></i> {{$gallery->view}}</li>
@@ -54,7 +54,7 @@
                 </a>
               @endforeach
             </div>
-            <div class="d-flex justify-content-center mb-3 wow fadeInUp">
+            <div class="d-flex justify-content-center mb-3 wow fadeIn">
               {{ $galleries->links() }}
             </div>
           </div>

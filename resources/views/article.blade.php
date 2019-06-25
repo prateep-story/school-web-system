@@ -40,10 +40,10 @@
     <div class="row">
       <div class="col-md-12">
         <div class="card" id="article">
-          <img class="card-img-top wow fadeInUp" src="{{ asset('images/articles/'.$article->image)}}" alt="">
+          <img class="card-img-top wow fadeIn" src="{{ asset('images/articles/'.$article->image)}}" alt="">
           @if ($article->category->type == 'ข่าว')
-            <h1 class="card-title mt-3 wow fadeInUp">{{$article->article}} <span class="float-right" id="share"></span></h1>
-            <ul class="list-inline wow fadeInUp">
+            <h1 class="card-title mt-3 wow fadeIn">{{$article->article}} <span class="float-right" id="share"></span></h1>
+            <ul class="list-inline wow fadeIn">
                 <li class="list-inline-item"><i class="far fa-clock"></i> {{ date_th($article->created_at) }}</li>
                 <li class="list-inline-item"><a href="{{ url('หมวดหมู่/'.$article->category->slug) }}"> <i class="far fa-folder-open"></i> {{$article->category->category}}</a></li>
                 <li class="list-inline-item"><i class="far fa-user"></i> {{$article->user->name}}</li>
@@ -51,11 +51,11 @@
             </ul>
             
           @endif
-          <div class="card-body wow fadeInUp">
+          <div class="card-body wow fadeIn">
             <p class="card-text">{!! $article->content !!}</p>
           </div>
           @if ($article->category->type == 'ข่าว')
-          <div class="card-footer text-muted wow fadeInUp">
+          <div class="card-footer text-muted wow fadeIn">
             @foreach ($article->tags as $tag)
             <a href="{{ url('ป้ายข้อความ/'.$tag->slug)}}">
                 <i class="fas fa-tag"></i>

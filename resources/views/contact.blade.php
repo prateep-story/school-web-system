@@ -25,19 +25,19 @@
 <section class="wow fadeIn">
   <div class="container box">
     <div class="row">
-      <div class="col-md-6 wow fadeInUp">
+      <div class="col-md-6 wow fadeIn">
         <h1>ข้อมูลการติดต่อโรงเรียน</h1>
         <p>107 หมู่ที่ 17 บ้านมอแสงทอง ต.โพธิ์ทอง อ.ปางศิลาทอง จ.กำแพงเพชร 62120</p>
         <p>โทรศัพท์ 055-868884 โทรสาร 055-868886</p>
         <p>อีเมล์ info@pslt.ac.th</p>
         <p>เว็บไซต์ http://www.pslt.ac.th</p>
-        <div class="wow fadeInUp" id="map" style="height: 500px; position: relative; overflow: hidden;"></div>
+        <div class="wow fadeIn" id="map" style="height: 500px; position: relative; overflow: hidden;"></div>
       </div>
       <div class="col-md-6 blog-sidebar">
         @if (session('alert'))
         <div class="alert {{session('alert')}}" role="alert"><i class="far fa-bell"></i> {{ session('message') }}</div>
         @endif
-        <div class="card wow fadeInUp">
+        <div class="card wow fadeIn">
           <div class="card-body ">
             <form class="" action="{{ url('ติดต่อเรา')}}" method="post">
               {{ csrf_field() }}

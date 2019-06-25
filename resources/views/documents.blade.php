@@ -28,14 +28,14 @@
             <div class="col-md-12">
                 <div class="clearfix mb-3">
                     @foreach ($documents as $key => $document)
-                    <a class="btn btn-outline-secondary mt-2" role="button" class="wow fadeInUp" href="{{url('ดาวน์โหลด/'.$document->slug)}}" >{{$document->document}}</a>
+                    <a class="btn btn-outline-secondary mt-2" role="button" class="wow fadeIn" href="{{url('ดาวน์โหลด/'.$document->slug)}}" >{{$document->document}}</a>
                     @endforeach
                 </div>
                 <div class="table-responsive">
                     <table class="table">
                         <tbody>
                             @foreach ($files as $key => $file)
-                            <tr class="wow fadeInUp">
+                            <tr class="wow fadeIn">
                                     <td>
                                         <p class="mb-0">{{$file->title}}</p>
                                         <small class="text-mute">{{'ชื่อไฟล์: '.$file->file}}</small>
@@ -48,7 +48,7 @@
                             @endforeach
                         </tbody>
                     </table>
-                    <div class="d-flex justify-content-center mb-3 wow fadeInUp">
+                    <div class="d-flex justify-content-center mb-3 wow fadeIn">
                         {{ $files->links() }}
                     </div>
                 </div>

@@ -29,7 +29,7 @@
         <div class="row">
             @foreach ($data as $key => $article)
               <a href="{{ url('อ่าน/'.$article->category.'/'.$article->slug)}}">
-                  <div class="col-md-4 col-12 mb-1 wow fadeInUp">
+                  <div class="col-md-4 col-12 mb-1 wow fadeIn">
                     <div class="card">
                       <div class="thumbnail">
                           <img class="card-img-top" src="{{ asset('images/thumbnails/' .$article->image)}}" alt="{{$article->image}}">
@@ -37,7 +37,7 @@
                       </div>
                       <div class="card-body">
                           <h5 class="card-title mb-0"><a href="{{ url('อ่าน/'.$article->category.'/'.$article->slug)}}">{{ $article->article}}</a></h5>
-                          <ul class="list-inline small wow fadeInUp">
+                          <ul class="list-inline small wow fadeIn">
                               <li class="list-inline-item"><a href="{{ url('หมวดหมู่/'.$article->category) }}"> <i class="far fa-folder-open"></i> {{$article->category}}</a></li>
                               <li class="list-inline-item"><i class="far fa-user"></i> {{$article->user->name}}</li>
                               <li class="list-inline-item"><i class="far fa-eye"></i> {{$article->view}}</li>
@@ -51,7 +51,7 @@
               ไม่พบข้อมูล...
             @endempty
           </div>
-          <div class="d-flex justify-content-center mb-3 wow fadeInUp">
+          <div class="d-flex justify-content-center mb-3 wow fadeIn">
             {{ $data->links() }}
           </div>
       </div>

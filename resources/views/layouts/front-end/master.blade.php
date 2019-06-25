@@ -21,7 +21,7 @@
 
 <body>
   {{-- <span class="preloader"></span> --}}
-  <nav class="navbar navbar-expand-lg navbar-dark d-none d-lg-block topbar wow fadeInDown">
+  <nav class="navbar navbar-expand-lg navbar-dark d-none d-lg-block topbar wow fadeIn">
     <div class="container">
       <div class="collapse navbar-collapse">
         <ul class="navbar-nav mr-auto">
@@ -163,7 +163,7 @@
 
   <footer class="sticky-bottomUp">
     @if (Request::is('/'))
-    <div class="footer wow fadeInUp">
+    <div class="footer wow fadeIn">
       <div class="container">
         <div class="row justify-content-between">
           <div class="col-md-2 text-center d-none d-sm-block">
@@ -187,8 +187,8 @@
                 <li>โทรศัพท์ 055-868884 โทรสาร 055-868886</li>
                 <li>อีเมล์ info@pslt.ac.th เว็บไซต์ www.pslt.ac.th</li>
                 <li>
-                  <i class="fas fa-chart-bar"></i> จำนวนผู้เข้าชมเว็บไซต์
-                  <a class="text-light" href="#" data-toggle="modal" data-target="#visitor">{{$visitors}} (เริ่มนับ 21/06/2562)</a>
+                  จำนวนผู้เข้าชมเว็บไซต์
+                  <a class="text-light" href="#" data-toggle="modal" data-target="#visitor"> {{$visitors}} <i class="fas fa-chart-bar"></i></a>
                 </li>
                 <li>
                   <a href="https://www.facebook.com/Pangsilathongsuksa-School-147507345343192/"
@@ -277,6 +277,7 @@
             </table>
             <div class="text-center">
               <p>ไอพีของคุณคือ {{$ip_address}}</p>
+              <p>(เริ่มนับวันที่ 21/06/2562)</p>
             </div>
           </div>
           <button type="button" class="btn btn-secondary" data-dismiss="modal">ปิด</button>

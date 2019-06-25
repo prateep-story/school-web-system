@@ -30,7 +30,7 @@
                     <table class="table">
                         <tbody>
                             @foreach ($researches as $key => $research)
-                            <tr class="wow fadeInUp">
+                            <tr class="wow fadeIn">
                                 <td>
                                     <p class="mb-0">{{$research->research}}</p>
                                     <small class="text-mute">{{'ปีการศึกษา: '.($research->year+543)}}</small>
@@ -45,7 +45,7 @@
                             @endforeach
                         </tbody>
                     </table>
-                    <div class="d-flex justify-content-center mb-3 wow fadeInUp">
+                    <div class="d-flex justify-content-center mb-3 wow fadeIn">
                         {{ $researches->links() }}
                     </div>
                 </div>

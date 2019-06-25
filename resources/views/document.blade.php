@@ -33,7 +33,7 @@
                         <tbody>
                             @foreach ($files->where('document_id',$document->id)->where('status',
                             '1')->sortByDesc('created_at') as $key => $file)
-                            <tr class="wow fadeInUp">
+                            <tr class="wow fadeIn">
                                 <td>
                                     <p class="mb-0">{{$file->title}}</p>
                                     <small class="text-mute">{{'ชื่อไฟล์: '.$file->file}}</small>

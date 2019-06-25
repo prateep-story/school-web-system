@@ -31,14 +31,14 @@
         <div class="card" id="article">
           <div class="card-body">
             <div class="card-body">
-              <h1 class="card-title wow fadeInUp">{{ $event->event }} </h1> {{ $event->user->name }} | 
+              <h1 class="card-title wow fadeIn">{{ $event->event }} </h1> {{ $event->user->name }} | 
               @if ($event->start_date->format('d') == $event->end_date->format('d'))
               {{ "วันที่ ".date_th($event->end_date).' '.time_th($event->start_date) }}
               @else
               {{ "วันที่ ".day_th($event->start_date).' - '.date_th($event->end_date).' '.time_th($event->start_date) }}
               @endif
-              <p class="card-text wow fadeInUp">{!! $event->description !!}</p>
-              <div class="my-2 py-2 border-top wow fadeInUp">
+              <p class="card-text wow fadeIn">{!! $event->description !!}</p>
+              <div class="my-2 py-2 border-top wow fadeIn">
                 <strong>โดย:</strong> {{$event->organizer}}
               </div>
             </div>

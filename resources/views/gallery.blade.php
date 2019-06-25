@@ -41,20 +41,20 @@
     <div class="row">
       <div class="col-md-12">
         <div class="card" id="article">
-          <img class="card-img-top wow fadeInUp" src="{{ asset('images/galleries/'.$gallery->image)}}" alt="">
-          <h1 class="card-title mt-3 wow fadeInUp">{{ $gallery->gallery }} <span class="float-right" id="share"></span></h1>
-          <ul class="list-inline wow fadeInUp">
+          <img class="card-img-top wow fadeIn" src="{{ asset('images/galleries/'.$gallery->image)}}" alt="">
+          <h1 class="card-title mt-3 wow fadeIn">{{ $gallery->gallery }} <span class="float-right" id="share"></span></h1>
+          <ul class="list-inline wow fadeIn">
               <li class="list-inline-item"><i class="far fa-clock"></i> {{ date_th($gallery->created_at) }}</li>
               <li class="list-inline-item"><i class="far fa-user"></i> {{$gallery->user->name}}</li>
               <li class="list-inline-item"><i class="far fa-images"></i> {{$gallery->pictures->count()}}</li>
               <li class="list-inline-item"><i class="far fa-eye"></i> {{$gallery->view}}</li>
           </ul>
-          <div class="card-body wow fadeInUp">
+          <div class="card-body wow fadeIn">
             <p class="card-text">{!! $gallery->content !!}</p>
           </div>
           <div class="row">
             @foreach ($gallery->pictures as $picture)
-            <div class="card col-md-4 my-3 wow fadeInUp">
+            <div class="card col-md-4 my-3 wow fadeIn">
               <a href="{{ asset('images/pictures/'.$picture->picture)}}" data-toggle="lightbox">
                 <img src="{{ asset('images/pictures/'.$picture->picture)}}" class="card-img-top img-fluid">
               </a>

@@ -29,10 +29,10 @@
         <div class="row">
           <div class="card col-md-12 p-3">
             <div class="row ">
-              <div class="col-md-12 mb-2 wow fadeInUp">
+              <div class="col-md-12 mb-2 wow fadeIn">
                 <img class="w-100 img-fluid" src="{{asset('images/awards/'.$award->image)}}">
               </div>
-              <div class="col-md-12 wow fadeInUp">
+              <div class="col-md-12 wow fadeIn">
                 <div class="card-block">
                   <h1 class="card-title mb-0">{{ $award->title }}</h1>
                   <h5 class="text-muted">{{ $award->subtitle }}</h5>

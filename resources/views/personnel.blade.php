@@ -29,11 +29,11 @@
         <div class="card">
           <div class="row justify-content-center">
             <div class="col-md-2 col-6 ">
-              <img class="card-img-top img-fluid mb-3 wow fadeInUp" src="{{ asset('images/personnels/'.$personnel->image)}}"
+              <img class="card-img-top img-fluid mb-3 wow fadeIn" src="{{ asset('images/personnels/'.$personnel->image)}}"
                 alt="{{$personnel->name}}">
             </div>
             <div class="col-md-10 col-12">
-              <div class="card-block wow fadeInUp">
+              <div class="card-block wow fadeIn">
                 <dl class="row">
                   <dt class="col-sm-2 col-4">ชื่อ-สกุล :</dt>
                   <dd class="col-sm-10 col-8">{{$personnel->name}}</dd>
@@ -57,7 +57,7 @@
           </div>
           <div class="row my-3">
             <div class="col-md-12">
-              <div class="table-responsive wow fadeInUp">
+              <div class="table-responsive wow fadeIn">
                 <table class="table">
                   <thead>
                     <tr>
