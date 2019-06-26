@@ -91,11 +91,7 @@
         {
             share: "twitter",
             logo: "fab fa-twitter",
-        },
-        {
-            share: "linkedin",
-            logo: "fab fa-linkedin",
-        },
+        }
       ]
     });
   </script>
