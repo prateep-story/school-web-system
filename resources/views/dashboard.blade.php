@@ -4,9 +4,7 @@
 <main class="app-content">
     <div class="app-title">
         <div>
-            <h1>แผงควบคุม<span class="small"> เว็บไซต์โรงเรียนปางศิลาทองศึกษา <small><a class="text-info" href="#"
-                data-toggle="modal" data-target="#readme"><i class="fas fa-feather-alt"></i></a></small>
-                </span></h1>
+            <h1>แผงควบคุม<span class="small">เว็บไซต์โรงเรียนปางศิลาทองศึกษา</span></h1>
         </div>
         <ul class="app-breadcrumb breadcrumb">
             <li class="breadcrumb-item"><i class="fas fa-home fa-lg"></i></li>
@@ -120,34 +118,6 @@
         </div>
     </div>
 </main>
-<div class="modal fade" id="readme" tabindex="-1" role="dialog" aria-labelledby="readme" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h4 class="modal-title" id="readme">วัตถุประสงค์</h4>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                <p>ผู้พัฒนาสารสนเทศ ซึ่งเป็นศิษย์เก่าของโรงเรียนปางศิลาทองศึกษา
-                    ได้เล็งเห็นความสำคัญของการนำเทคโนโลยีมาใช้ในการ เผยแพร่ข้อมูลประชาสัมพันธ์
-                    และการดำเนินงานด้านสารสนเทศของโรงเรียนให้มีประสิทธิภาพมากขึ้น
-                    โดยในการพัฒนาเว็บไซต์ผู้จัดทำได้พัฒนาด้วยภาษาพีเอชพี (PHP) โดยใช้ Laravel - The PHP Framework
-                    และระบบฐานข้อมูล MySQL เพื่อให้เป็นเว็บไซต์ทีมีประสิทธิภาพต่อผู้ใช้งานมากที่สุด
-                    และผู้จัดทำสามารถปรับปรุงให้มี ความเหมาะสมกับการดำเนินงานของโรงเรียน
-                    พร้อมทั้งมีความปลอดภัยด้านข้อมูลด้วยการกำหนดสิทธิการแก้ไขข้อมูลจากผู้ที่เกี่ยวข้องโดยตรง
-                    เพื่ออำนวยความสะดวกในการนำเสนอข้อมูลต่างๆ สามารถเผยแพร่ข้อมูล
-                    ประชาสัมพันธ์สู่กลุ่มเป้าหมายได้อย่างถูกต้อง อ่านง่ายสบายตา
-                    เป็นมาตรฐานเดียวกันและเชื่อมโยงข้อมูลไปยังเป้าหมายได้ตรงกับความต้องการ</p>
-                <blockquote class="blockquote text-right">
-                    <p class="mb-0">ผู้พัฒนาระบบ</p>
-                    <footer class="blockquote-footer">นายประทีป อุ่นอก</br><small>โทรศัพท์: 085-3469543</small></footer>
-                </blockquote>
-            </div>
-        </div>
-    </div>
-</div>
 @endsection
 
 @push('script')
