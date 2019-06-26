@@ -17,7 +17,7 @@
     </ul>
   </div>
   <div class="mb-2">
-      @can('create-data')
+      @can('create')
       <a class="btn btn-primary" href="{{ url('dashboard/link/create')}}" role="button"><i class="fas fa-plus"></i>
         เพิ่มข้อมูล</a>
       @endcan
@@ -53,10 +53,10 @@
                 <td class="text-center">{{ $value->user->name }}</td>
                 <td class="text-center">
                   <div class="btn-group btn-group-sm" role="group" aria-label="management">
-                      @can('edit-data')
+                      @can('edit')
                       <a href="{{ url('dashboard/link/'.$value->id.'/edit')}}" class="btn btn-secondary btn-sm"><i class="far fa-edit"></i></a>
                       @endcan
-                      @can('delete-data')
+                      @can('delete')
                       <a href="#" data-toggle="modal" data-target="#delete-{{ $value->id }}" class="btn btn-danger btn-sm"><i
                         class="far fa-trash-alt"></i></a>
                       @endcan

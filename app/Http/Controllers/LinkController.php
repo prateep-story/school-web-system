@@ -14,11 +14,11 @@ class LinkController extends Controller
 {
     public function __construct(){
         $this->middleware(['auth', 'verified', 'backend']);
-        $this->middleware('permission:list-data', ['only' => ['index']]);
-        $this->middleware('permission:create-data', ['only' => ['create','store']]);
-        $this->middleware('permission:edit-data', ['only' => ['edit','update']]);
-        $this->middleware('permission:show-data', ['only' => ['show']]);
-        $this->middleware('permission:delete-data', ['only' => ['destroy']]);
+        $this->middleware('permission:list', ['only' => ['index']]);
+        $this->middleware('permission:create', ['only' => ['create','store']]);
+        $this->middleware('permission:edit', ['only' => ['edit','update']]);
+        $this->middleware('permission:show', ['only' => ['show']]);
+        $this->middleware('permission:delete', ['only' => ['destroy']]);
     }
     /**
      * Display a listing of the resource.

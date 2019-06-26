@@ -16,7 +16,7 @@
     </ul>
   </div>
   <div class="mb-2">
-      @can('create-data')
+      @can('create')
       <a class="btn btn-primary" href="{{ url('dashboard/gallery/create')}}" role="button"><i class="fas fa-folder-open"></i>
         เพิ่มอัลบั้มภาพ</a>
       <a class="btn btn-info" href="{{ url('dashboard/picture/create')}}" role="button"><i class="fas fa-image"></i>
@@ -59,14 +59,14 @@
                 <td class="text-center">{{ $value->user->name }}</td>
                 <td class="text-center">
                   <div class="btn-group btn-group-sm" role="group" aria-label="management">
-                      @can('show-data')
+                      @can('show')
                       <a href="{{ url('dashboard/gallery/'.$value->id)}}" class="btn btn-primary btn-sm"><span class="far fa-eye"></span></a>
                       @endcan
-                      @can('edit-data')
+                      @can('edit')
                       <a href="{{ url('dashboard/gallery/'.$value->id.'/edit')}}" class="btn btn-secondary btn-sm"><i
                         class="far fa-edit"></i></a>
                       @endcan
-                      @can('delete-data')
+                      @can('delete')
                       <a href="#" data-toggle="modal" data-target="#delete-{{ $value->id }}" class="btn btn-danger btn-sm"><i
                         class="far fa-trash-alt"></i></a>
                       @endcan

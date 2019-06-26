@@ -29,7 +29,7 @@
         <h1>ข้อมูลการติดต่อโรงเรียน</h1>
         <p>107 หมู่ที่ 17 บ้านมอแสงทอง ต.โพธิ์ทอง อ.ปางศิลาทอง จ.กำแพงเพชร 62120</p>
         <p>โทรศัพท์ 055-868884 โทรสาร 055-868886</p>
-        <p>อีเมล์ info@pslt.ac.th</p>
+        <p>อีเมล์ pangschool@hotmail.com</p>
         <p>เว็บไซต์ http://www.pslt.ac.th</p>
         <div class="wow fadeIn" id="map" style="height: 500px; position: relative; overflow: hidden;"></div>
       </div>

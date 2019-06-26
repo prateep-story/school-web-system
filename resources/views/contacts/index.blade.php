@@ -51,10 +51,10 @@
                 <td class="text-center">{{ date_th($value->created_at) }}</td>
                 <td class="text-center">
                   <div class="btn-group btn-group-sm" role="group" aria-label="management">
-                      @can('edit-data')
+                      @can('edit')
                       <a href="{{ url('dashboard/contact/'.$value->id) }}" class="btn btn-secondary btn-sm"><span class="far fa-eye"></span></a>
                       @endcan
-                      @can('delete-data')
+                      @can('delete')
                       <a href="#" data-toggle="modal" data-target="#delete-{{ $value->id }}" class="btn btn-danger btn-sm"><i
                         class="far fa-trash-alt"></i></a>
                       @endcan

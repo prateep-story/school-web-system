@@ -51,6 +51,16 @@
           @else
           @auth
           <li class="nav-item">
+              <div class="btn-group" role="group" aria-label="sgs">
+                  <a class="btn btn-outline-light btn-sm" role="button"
+                    href="https://sgs6.bopp-obec.info/sgss/security/signin.aspx" target="_blank"><i
+                      class="fas fa-chart-area"></i>
+                    ผลการเรียน</a>
+                  <a class="btn btn-outline-light btn-sm" role="button"
+                    href="https://sgs3.bopp-obec.info/sgs/Security/SignIn.aspx" target="_blank"><i
+                      class="fas fa-chart-bar"></i>
+                    ทะเบียน-วัดผล</a>
+                </div>
             <div class="btn-group" role="group" aria-label="auth">
               @role('admin|officer')
               <a class="btn btn-outline-light btn-sm" role="button" href="{{ route('dashboard') }}"><i
@@ -232,7 +242,7 @@
                 <li>โรงเรียนปางศิลาทองศึกษา สังกัดเขตพื้นที่การศึกษา สพม. 41</li>
                 <li>เลขที่ 107 หมู่ที่ 17 บ้านมอแสงทอง ตำบลโพธิ์ทอง<br>อำเภอปางศิลาทอง จังหวัดกำแพงเพชร 62120</li>
                 <li>โทรศัพท์ 055-868884 โทรสาร 055-868886</li>
-                <li>อีเมล์ info@pslt.ac.th เว็บไซต์ www.pslt.ac.th</li>
+                <li>อีเมล์ pangschool@hotmail.com เว็บไซต์ www.pslt.ac.th</li>
                 <li>
                   จำนวนผู้เข้าชมเว็บไซต์
                   <a class="text-light" href="#" data-toggle="modal" data-target="#visitor"> {{$visitors}} <i
