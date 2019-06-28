@@ -37,6 +37,7 @@
                 <th>รูปภาพ</th>
                 <th>สถานะ</th>
                 <th>สร้างวันที่</th>
+                <th>แก้ไขล่าสุด</th>
                 <th>ผู้บันทึกข้อมูล</th>
                 <th>จัดการข้อมูล</th>
               </tr>
@@ -56,6 +57,7 @@
                   @endif
                 </td>
                 <td class="text-center">{{ date_th($value->created_at) }}</td>
+                <td class="text-center">{{ date_th($value->updated_at) }}</td>
                 <td class="text-center">{{ $value->user->name }}</td>
                 <td class="text-center">
                   <div class="btn-group btn-group-sm" role="group" aria-label="management">

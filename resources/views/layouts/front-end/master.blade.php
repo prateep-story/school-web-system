@@ -34,13 +34,9 @@
           <li class="nav-item">
             <div class="btn-group" role="group" aria-label="sgs">
               <a class="btn btn-outline-light btn-sm" role="button"
-                href="https://sgs6.bopp-obec.info/sgss/security/signin.aspx" target="_blank"><i
-                  class="fas fa-chart-area"></i>
-                ผลการเรียน</a>
-              <a class="btn btn-outline-light btn-sm" role="button"
-                href="https://sgs3.bopp-obec.info/sgs/Security/SignIn.aspx" target="_blank"><i
-                  class="fas fa-chart-bar"></i>
-                ทะเบียน-วัดผล</a>
+                href="https://sites.google.com/view/schoolps/" target="_blank"><i
+                  class="fas fa-check"></i>
+                เช็คชื่อกิจกรรม</a>
             </div>
             <div class="btn-group" role="group" aria-label="guest">
               <a class="btn btn-outline-light btn-sm" role="button" href="{{ route('login') }}"><i
@@ -52,14 +48,10 @@
           @auth
           <li class="nav-item">
               <div class="btn-group" role="group" aria-label="sgs">
-                  <a class="btn btn-outline-light btn-sm" role="button"
-                    href="https://sgs6.bopp-obec.info/sgss/security/signin.aspx" target="_blank"><i
-                      class="fas fa-chart-area"></i>
-                    ผลการเรียน</a>
-                  <a class="btn btn-outline-light btn-sm" role="button"
-                    href="https://sgs3.bopp-obec.info/sgs/Security/SignIn.aspx" target="_blank"><i
-                      class="fas fa-chart-bar"></i>
-                    ทะเบียน-วัดผล</a>
+                    <a class="btn btn-outline-light btn-sm" role="button"
+                    href="https://sites.google.com/view/schoolps/" target="_blank"><i
+                      class="fas fa-check"></i>
+                    เช็คชื่อกิจกรรม</a>
                 </div>
             <div class="btn-group" role="group" aria-label="auth">
               @role('admin|officer')
@@ -163,14 +155,10 @@
           </li>
           @guest
           <form class="form-inline d-md-none d-flex justify-content-between">
-            <a class="btn btn-outline-secondary btn-sm mr-1 mb-1" role="button"
-              href="https://sgs6.bopp-obec.info/sgss/security/signin.aspx" target="_blank"><i
-                class="fas fa-chart-area"></i>
-              ผลการเรียน</a>
-            <a class="btn btn-outline-secondary btn-sm mr-1 mb-1" role="button"
-              href="https://sgs3.bopp-obec.info/sgs/Security/SignIn.aspx" target="_blank"><i
-                class="fas fa-chart-bar"></i>
-              ทะเบียน-วัดผล</a>
+              <a class="btn btn-outline-secondary btn-sm mr-1 mb-1" role="button"
+              href="https://sites.google.com/view/schoolps/" target="_blank"><i
+                class="fas fa-check"></i>
+              เช็คชื่อกิจกรรม</a>
             <a class="btn btn-outline-secondary btn-sm mr-1 mb-1" role="button" href="{{ route('login') }}"><i
                 class="fas fa-sign-in-alt"></i>
               ผู้ดูแลระบบ</a>
@@ -178,14 +166,10 @@
           @else
           @auth
           <form class="form-inline d-md-none d-flex justify-content-between">
-            <a class="btn btn-outline-secondary btn-sm mr-1 mb-1" role="button"
-              href="https://sgs6.bopp-obec.info/sgss/security/signin.aspx" target="_blank"><i
-                class="fas fa-chart-area"></i>
-              ผลการเรียน</a>
-            <a class="btn btn-outline-secondary btn-sm mr-1 mb-1" role="button"
-              href="https://sgs3.bopp-obec.info/sgs/Security/SignIn.aspx" target="_blank"><i
-                class="fas fa-chart-bar"></i>
-              ทะเบียน-วัดผล</a>
+              <a class="btn btn-outline-secondary btn-sm mr-1 mb-1" role="button"
+              href="https://sites.google.com/view/schoolps/" target="_blank"><i
+                class="fas fa-check"></i>
+              เช็คชื่อกิจกรรม</a>
             @role('admin|officer')
             <a class="btn btn-outline-secondary btn-sm mr-1 mb-1" role="button" href="{{ route('dashboard') }}"><i
                 class="fas fa-cog"></i>

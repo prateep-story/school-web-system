@@ -31,6 +31,7 @@
                 <th>อีเมล์</th>
                 <th>สถานะ</th>
                 <th>สร้างวันที่</th>
+                <th>ตอบกลับล่าสุด</th>
                 <th>จัดการข้อมูล</th>
               </tr>
             </thead>
@@ -49,6 +50,7 @@
                   @endif
                 </td>
                 <td class="text-center">{{ date_th($value->created_at) }}</td>
+                <td class="text-center">{{ date_th($value->updated_at) }}</td>
                 <td class="text-center">
                   <div class="btn-group btn-group-sm" role="group" aria-label="management">
                       @can('edit')

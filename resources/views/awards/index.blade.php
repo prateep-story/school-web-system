@@ -36,6 +36,7 @@
                 <th>ประเภทผลงาน</th>
                 <th>ปีที่ได้รับรางวัล</th>
                 <th>สร้างวันที่</th>
+                <th>แก้ไขล่าสุด</th>
                 <th>ผู้บันทึกข้อมูล</th>
                 <th>จัดการข้อมูล</th>
               </tr>
@@ -48,6 +49,7 @@
                 <td class="text-center">{{ $value->portfolio->portfolio }}</td>
                 <td class="text-center">{{ $value->year+543 }}</td>
                 <td class="text-center">{{ date_th($value->created_at) }}</td>
+                <td class="text-center">{{ date_th($value->updated_at) }}</td>
                 <td class="text-center">{{ $value->user->name }}</td>
                 <td class="text-center">
                   <div class="btn-group btn-group-sm" role="group" aria-label="management">
