@@ -9,12 +9,12 @@
 <main class="app-content">
   <div class="app-title">
     <div>
-      <h1>แก้ไข<span class="small"> โปสเตอร์แนะแนวการศึกษา</span></h1>
+      <h1>แก้ไข<span class="small"> วารสารโรงเรียน</span></h1>
     </div>
     <ul class="app-breadcrumb breadcrumb">
       <li class="breadcrumb-item"><a href="{{ url('dashboard')}}"><i class="fas fa-home fa-lg"></i></a></li>
-      <li class="breadcrumb-item"><a href="{{ url('dashboard/guidance')}}">โปสเตอร์แนะแนวการศึกษา</a></li>
-      <li class="breadcrumb-item"><a href="{{ url('dashboard/guidance/edit')}}">แก้ไขข้อมูล</a></li>
+      <li class="breadcrumb-item"><a href="{{ url('dashboard/newsletter')}}">วารสารโรงเรียน</a></li>
+      <li class="breadcrumb-item"><a href="{{ url('dashboard/newsletter/edit')}}">แก้ไขข้อมูล</a></li>
     </ul>
   </div>
   @if (session('alert'))
@@ -24,34 +24,26 @@
     <div class="col-md-12">
       <div class="box">
         <div class="box-body">
-          <form action="{{ url('dashboard/guidance/'.$guidance->id)}}" method="post" enctype="multipart/form-data">
+          <form action="{{ url('dashboard/newsletter/'.$newsletter->id)}}" method="post" enctype="multipart/form-data">
             {{ method_field('PUT') }} {{ csrf_field() }}
             <div class="form-group">
-              <label for="guidance">ชื่อโปสเตอร์แนะแนวการศึกษา</label>
-              <input type="text" class="form-control {{ $errors->has('guidance') ? 'is-invalid' : '' }}" id="guidance"
-                placeholder="guidance" name="guidance" value="{{ $guidance->guidance }}">
-              @if ($errors->has('guidance'))
-              <div class="invalid-feedback">{{ $errors->first('guidance') }}</div>
+              <label for="newsletter">ชื่อวารสารโรงเรียน</label>
+              <input type="text" class="form-control {{ $errors->has('newsletter') ? 'is-invalid' : '' }}" id="newsletter"
+                placeholder="newsletter" name="newsletter" value="{{ $newsletter->newsletter }}">
+              @if ($errors->has('newsletter'))
+              <div class="invalid-feedback">{{ $errors->first('newsletter') }}</div>
               @endif
             </div>
             <div class="form-group">
-              <label class="image">เลือกรูปภาพ <small class="text-danger">(800 x 600 pixel)</small></label>
+              <label class="image">เลือกรูปภาพ <small class="text-danger">(1240 x 1754 pixel)</small></label>
               <input id="image" type="file" class="form-control" name="image">
-            </div>
-            <div class="form-group">
-              <label for="link">URL <small class="text-danger">(ระบุ http://)</small></label>
-              <input type="text" class="form-control {{ $errors->has('url') ? 'is-invalid' : '' }}" id="url"
-                placeholder="URL" name="url" value="{{ $guidance->url }}">
-              @if ($errors->has('url'))
-              <div class="invalid-feedback">{{ $errors->first('url') }}</div>
-              @endif
             </div>
             <div class="form-group">
               <label for="status">สถานะ</label>
               <div class="checkbox icheck">
-                <input type="radio" name="status" value="1" @if ($guidance->status ==1) checked
+                <input type="radio" name="status" value="1" @if ($newsletter->status ==1) checked
                 @endif> แสดงผล
-                <input type="radio" name="status" value="0" @if ($guidance->status ==0) checked
+                <input type="radio" name="status" value="0" @if ($newsletter->status ==0) checked
                 @endif> แบบร่าง
               </div>
               @if ($errors->has('status'))
@@ -77,15 +69,15 @@
     theme: "fas",
     showCancel: false,
     showUpload: false,
-    maxImageWidth: 800,
-    maxImageHeight: 600,
-    maxFileSize: 2000,
+    maxImageWidth: 1240,
+    maxImageHeight: 1754,
+    maxFileSize: 5120,
     allowedFileExtensions: ["jpg", "png", "gif"],
     initialPreviewAsData: true,
     initialPreviewFileType: 'image',
-    initialPreview: @json(asset('images/guidances/'.$guidance->image)),
+    initialPreview: @json(asset('images/newsletters/'.$newsletter->image)),
     initialPreviewConfig: [{
-      caption: @json($guidance->image),
+      caption: @json($newsletter->image),
       size: @json($size),
       key: 1
     }, ],

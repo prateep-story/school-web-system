@@ -2,6 +2,7 @@
 
 @push('style')
 @include('cdn-library.slick.style')
+@include('cdn-library.lightbox.style')
 @endpush
 
 @section('content')
@@ -270,7 +271,7 @@
 <section id="download" class="wow fadeIn">
     <div class="container">
         <div class="row">
-            <div class="col-md-6">
+            <div class="col-md-8">
                 <div class="box-news">
                     <div class="header wow fadeIn">
                         <a href="{{ url('ไฟล์เอกสารทั้งหมด/')}}" class="pull-right view-all">ดูทั้งหมด <span
@@ -280,7 +281,7 @@
                     <div class="table-responsive wow fadeIn">
                         <table class="table">
                             <tbody>
-                                @foreach ($files->sortByDesc('created_at')->slice(0,5) as $key => $file)
+                                @foreach ($files->sortByDesc('created_at')->slice(0,8) as $key => $file)
                                 <tr>
                                     <td>
                                         <h5 class="mb-0">{{$file->title}}</h5>
@@ -300,34 +301,35 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-6">
+            <div class="col-md-4">
                 <div class="box-news">
                     <div class="header wow fadeIn">
-                        <a class="view-all mx-2" href="#guidance" role="button" data-slide="next">
+                        <a class="view-all mx-2" href="#newsletter" role="button" data-slide="next">
                             <span class="icon"><i
                                     class="fas fa-chevron-right faa-passing animated fa-1x"></i></span></a>
                         </a>
-                        <a class="view-all mx-2" href="#guidance" role="button" data-slide="prev">
+                        <a class="view-all mx-2" href="#newsletter" role="button" data-slide="prev">
                             <span class="icon"><i
                                     class="fas fa-chevron-left faa-passing-reverse animated fa-1x"></i></span></a>
                         </a>
-                        <h1><span class="title-head">แนะแนว</span>การศึกษา</h1>
+                        <h1><span class="title-head">วารสาร</span>โรงเรียน</h1>
                     </div>
-                    <div id="guidance" class="carousel slide wow fadeIn" data-ride="carousel">
+                    <div id="newsletter" class="carousel slide wow fadeIn" data-ride="carousel">
                         <div class="carousel-inner">
-                            @foreach ($guidances->where('status','1') as $guidance)
-                            <div class="carousel-item {{ $loop->first ? 'active' : ''}}">
-                                <a href="{{ $guidance->url}}" target="_blank">
-                                    <img class="d-block w-100" src="{{ asset('images/guidances/'.$guidance->image)}}"
-                                        alt="{{$guidance->guidance}}">
+                            @foreach ($newsletters->where('status','1') as $newsletter)
+                            <div class="carousel-item text-center {{ $loop->first ? 'active' : ''}}">
+                                <a href="{{ asset('images/newsletters/'.$newsletter->image)}}" data-toggle="lightbox">
+                                    <img class="d-block w-100" src="{{ asset('images/thumbnails/'.$newsletter->image)}}"
+                                        alt="{{$newsletter->newsletter}}">
+                                <p class="text-muted mt-2">{{$newsletter->newsletter}}</p>
                                 </a>
                             </div>
                             @endforeach
                         </div>
                     </div>
                     <ol class="carousel-indicators">
-                        @foreach ($guidances->where('status','1') as $key => $value)
-                        <li data-target="#guidance" data-slide-to="{{ $loop->index }}" class="{{ $loop->first ? 'active' : ''}}"></li>
+                        @foreach ($newsletters->where('status','1') as $key => $value)
+                        <li data-target="#newsletter" data-slide-to="{{ $loop->index }}" class="{{ $loop->first ? 'active' : ''}}"></li>
                         @endforeach
                     </ol>
                 </div>
@@ -475,6 +477,7 @@
 @push('script')
 @include('cdn-library.slick.script')
 @include('cdn-library.googlemap.script')
+@include('cdn-library.lightbox.script')
 <script type="text/javascript">
     var a = 0;
     $(window).scroll(function () {
@@ -560,11 +563,16 @@
         });
     });
 
-    $('#guidance').carousel({
+    $('#newsletter').carousel({
         interval: 2000
     });
     $('#other-link').carousel({
         interval: 5000
     });
+
+    $(document).on('click', '[data-toggle="lightbox"]', function (event) {
+    event.preventDefault();
+    $(this).ekkoLightbox();
+  });
 </script>
 @endpush

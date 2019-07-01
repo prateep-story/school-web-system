@@ -15,7 +15,7 @@ use App\Category;
 use App\Article;
 use App\Tag;
 use App\Highlight;
-use App\Guidance;
+use App\Newsletter;
 use App\File;
 use App\Gallery;
 use App\Picture;
@@ -53,7 +53,7 @@ class FrontpageController extends Controller
             ->where('articles.status', '1');
         })->get()->sortByDesc('created_at');
         $highlights = Highlight::all();
-        $guidances = Guidance::all();
+        $newsletters = Newsletter::all();
         $galleries = Gallery::all();
         $events = Event::all();
         $departments = Department::all();
@@ -69,7 +69,7 @@ class FrontpageController extends Controller
         $links = Link::all();
         $xml = XmlParser::load('https://www.kroobannok.com/rss.xml');
         $feed  = $xml->getContent();
-        return view('frontpage', compact('articles', 'highlights', 'guidances', 'galleries', 'events', 'departments', 'portfolios', 'awards', 'courses', 'documents', 'files', 'personnels', 'messages', 'counters', 'researches', 'links', 'feed'));
+        return view('frontpage', compact('articles', 'highlights', 'newsletters', 'galleries', 'events', 'departments', 'portfolios', 'awards', 'courses', 'documents', 'files', 'personnels', 'messages', 'counters', 'researches', 'links', 'feed'));
     }
     public function article($category, $slug)
     {

@@ -20,7 +20,7 @@
 </head>
 
 <body>
-  {{-- <span class="preloader"></span> --}}
+  <span class="preloader"></span>
   <nav class="navbar navbar-expand-lg navbar-dark d-none d-lg-block topbar wow fadeIn">
     <div class="container">
       <div class="collapse navbar-collapse">

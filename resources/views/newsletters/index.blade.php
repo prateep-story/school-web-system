@@ -9,16 +9,16 @@
 <main class="app-content">
   <div class="app-title">
     <div>
-      <h1>ตารางข้อมูล<span class="small"> โปสเตอร์แนะแนวการศึกษา</span></h1>
+      <h1>ตารางข้อมูล<span class="small"> วารสารโรงเรียน</span></h1>
     </div>
     <ul class="app-breadcrumb breadcrumb">
       <li class="breadcrumb-item"><a href="{{ url('dashboard')}}"><i class="fas fa-home fa-lg"></i></a></li>
-      <li class="breadcrumb-item"><a href="{{ url('dashboard/guidance')}}">โปสเตอร์แนะแนวการศึกษา</a></li>
+      <li class="breadcrumb-item"><a href="{{ url('dashboard/newsletter')}}">วารสารโรงเรียน</a></li>
     </ul>
   </div>
   <div class="mb-2">
       @can('create')
-      <a class="btn btn-primary" href="{{ url('dashboard/guidance/create')}}" role="button"><i class="fas fa-plus"></i>
+      <a class="btn btn-primary" href="{{ url('dashboard/newsletter/create')}}" role="button"><i class="fas fa-plus"></i>
         เพิ่มข้อมูล</a>
       @endcan
   </div>
@@ -33,7 +33,7 @@
             <thead>
               <tr>
                 <th>#</th>
-                <th>โปสเตอร์แนะแนวการศึกษา</th>
+                <th>วารสารโรงเรียน</th>
                 <th>รูปภาพ</th>
                 <th>สถานะ</th>
                 <th>สร้างวันที่</th>
@@ -43,11 +43,11 @@
               </tr>
             </thead>
             <tbody>
-              @foreach ($guidances->sortByDesc('updated_at') as $key => $value)
+              @foreach ($newsletters->sortByDesc('updated_at') as $key => $value)
               <tr>
                 <td>{{ $key+1 }}</td>
-                <td>{{ str_limit($value->guidance, 75) }}</td>
-                <td class="text-center"><a href="{{ asset('images/guidances/'.$value->image)}}" data-toggle="lightbox">
+                <td>{{ str_limit($value->newsletter, 75) }}</td>
+                <td class="text-center"><a href="{{ asset('images/newsletters/'.$value->image)}}" data-toggle="lightbox">
                     <i class="fas fa-image"></i> รูปภาพ</a></td>
                 <td class="text-center">
                   @if ($value->status =='1')
@@ -57,11 +57,12 @@
                   @endif
                 </td>
                 <td class="text-center">{{ date_th($value->created_at) }}</td>
+                <td class="text-center">{{ date_th($value->updated_at) }}</td>
                 <td class="text-center">{{ $value->user->name }}</td>
                 <td class="text-center">
                   <div class="btn-group btn-group-sm" role="group" aria-label="management">
                       @can('edit')
-                      <a href="{{ url('dashboard/guidance/'.$value->id.'/edit')}}" class="btn btn-secondary btn-sm"><i
+                      <a href="{{ url('dashboard/newsletter/'.$value->id.'/edit')}}" class="btn btn-secondary btn-sm"><i
                         class="far fa-edit"></i></a>
                       @endcan
                       @can('delete')
@@ -83,10 +84,10 @@
                       </button>
                     </div>
                     <div class="modal-body">
-                      <p>คุณต้อการลบรายการนี้หรือไม่?</p>
+                      <p>คุณต้องการลบรายการนี้หรือไม่?</p>
                     </div>
                     <div class="modal-footer">
-                      <form action="{{ url('dashboard/guidance/'.$value->id)}}" method="post">
+                      <form action="{{ url('dashboard/newsletter/'.$value->id)}}" method="post">
                         {{ csrf_field() }} {{ method_field('DELETE')}}
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">ยกเลิก</button>
                         <button type="submit" class="btn btn-danger"><i class="far fa-trash-alt"></i> ยืนยัน</button>

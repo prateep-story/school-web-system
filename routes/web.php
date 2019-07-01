@@ -49,7 +49,7 @@ Route::resource('dashboard/category', 'CategoryController');
 Route::resource('dashboard/article', 'ArticleController');
 Route::resource('dashboard/tag', 'TagController');
 Route::resource('dashboard/highlight', 'HighlightController');
-Route::resource('dashboard/guidance', 'GuidanceController');
+Route::resource('dashboard/newsletter', 'NewsletterController');
 Route::resource('dashboard/document', 'DocumentController');
 Route::resource('dashboard/file', 'FileController');
 Route::resource('dashboard/gallery', 'GalleryController');

@@ -63,9 +63,9 @@ return [
             'root' => public_path('images/articles/'),
         ],
 
-        'guidance' => [
+        'newsletter' => [
             'driver' => 'local',
-            'root' => public_path('images/guidances/'),
+            'root' => public_path('images/newsletters/'),
         ],
         
         'highlight' => [

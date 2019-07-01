@@ -185,7 +185,7 @@
         <ul class="app-menu">
             <li><a class="app-menu-item {{ Request::is('dashboard') ? 'active' : '' }}" href="{{ url('/dashboard')}}"><i
                         class="app-menu-icon fas fa-laptop"></i><span class="app-menu-label">แผงควบคุม</span></a></li>
-            <li class="treeview {{ Request::is('dashboard/category*', 'dashboard/article*', 'dashboard/tag*', 'dashboard/highlight*', 'dashboard/guidance*') ? 'is-expanded' : '' }}">
+            <li class="treeview {{ Request::is('dashboard/category*', 'dashboard/article*', 'dashboard/tag*', 'dashboard/highlight*', 'dashboard/newsletter*') ? 'is-expanded' : '' }}">
                 <a class="app-menu-item" href="#" data-toggle="treeview">
                     <i class="app-menu-icon fas fa-newspaper"></i><span class="app-menu-label">ข่าว/บทความ</span><i
                         class="treeview-indicator fas fa-angle-right"></i>
@@ -199,8 +199,8 @@
                                 class="icon fas fa-tag"></i> ป้ายข้อความ</a></li>
                     <li><a class="treeview-item {{ Request::is('dashboard/highlight*') ? 'active' : '' }}" href="{{ url('dashboard/highlight')}}"><i
                                 class="icon fas fa-sign"></i> ไฮไลท์/แบนเนอร์</a></li>
-                    <li><a class="treeview-item {{ Request::is('dashboard/guidance*') ? 'active' : '' }}" href="{{ url('dashboard/guidance')}}"><i
-                                class="icon fas fa-rss"></i> แนะแนวการศึกษา</a></li>
+                    <li><a class="treeview-item {{ Request::is('dashboard/newsletter*') ? 'active' : '' }}" href="{{ url('dashboard/newsletter')}}"><i
+                                class="icon fas fa-rss"></i> วารสารโรงเรียน</a></li>
                 </ul>
             </li>
             <li class="treeview {{ Request::is('dashboard/document*', 'dashboard/file*') ? 'is-expanded' : '' }}">

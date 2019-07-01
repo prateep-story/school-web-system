@@ -3,12 +3,12 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Http\Requests\GuidanceRequest;
+use App\Http\Requests\NewsletterRequest;
 use Intervention\Image\Facades\Image;
 use Illuminate\Support\Facades\Storage;
-use App\Guidance;
+use App\Newsletter;
 
-class GuidanceController extends Controller
+class NewsletterController extends Controller
 {
     public function __construct(){
         $this->middleware(['auth', 'verified', 'backend']);
@@ -25,8 +25,8 @@ class GuidanceController extends Controller
      */
     public function index()
     {
-        $guidances= Guidance::all();
-        return view('guidances.index', compact('guidances'));
+        $newsletters= Newsletter::all();
+        return view('newsletters.index', compact('newsletters'));
     }
 
     /**
@@ -36,7 +36,7 @@ class GuidanceController extends Controller
      */
     public function create()
     {
-        return view('guidances.create');
+        return view('newsletters.create');
     }
 
     /**
@@ -45,24 +45,22 @@ class GuidanceController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(GuidanceRequest $request)
+    public function store(NewsletterRequest $request)
     {
-        $guidance = new Guidance;
-        $guidance->guidance = $request->guidance;
-        $guidance->status = $request->status;
-        $guidance->user_id = $request->author;
+        $newsletter = new Newsletter;
+        $newsletter->newsletter = $request->newsletter;
+        $newsletter->status = $request->status;
+        $newsletter->user_id = $request->author;
         if ($request->hasFile('image')) {
             $filename = time().".".$request->file('image')->getClientOriginalExtension();
-            Image::make($request->file('image'))->resize(800, null, function ($constraint){
-                $constraint->aspectRatio();
-            })->fit(800, 600, null, 'top')->save(public_path('images/guidances/' . $filename));
-            $guidance->image = $filename;
+            Image::make($request->file('image'))->save(public_path('images/newsletters/' . $filename));
+            Image::make($request->file('image'))->resize(350, 495.8)->save(public_path('images/thumbnails/' . $filename));
+            $newsletter->image = $filename;
         } else {
-            $guidance->image = 'guidance.jpg';
+            $newsletter->image = 'newsletter.jpg';
         }
-        $guidance->url = $request->url;
-        $guidance->slug =  slug_th($request->guidance);
-        $guidance->save();
+        $newsletter->slug =  slug_th($request->newsletter);
+        $newsletter->save();
         return back()->with([
           'alert' => 'alert-success',
           'message' => 'บันทึกข้อมูลเรียบร้อย!',
@@ -88,9 +86,9 @@ class GuidanceController extends Controller
      */
     public function edit($id)
     {
-        $guidance = Guidance::find($id);
-        $size = filesize('images/guidances/'.$guidance->image);
-        return view('guidances.edit', compact('guidance', 'size'));
+        $newsletter = Newsletter::find($id);
+        $size = filesize('images/newsletters/'.$newsletter->image);
+        return view('newsletters.edit', compact('newsletter', 'size'));
     }
 
     /**
@@ -100,27 +98,26 @@ class GuidanceController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(GuidanceRequest $request, $id)
+    public function update(NewsletterRequest $request, $id)
     {
-        $guidance = Guidance::find($id);
-        $guidance->guidance = $request->guidance;
-        $guidance->status = $request->status;
-        $guidance->user_id = $request->author;
+        $newsletter = Newsletter::find($id);
+        $newsletter->newsletter = $request->newsletter;
+        $newsletter->status = $request->status;
+        $newsletter->user_id = $request->author;
         if ($request->hasFile('image')) {
             $filename = time().".".$request->file('image')->getClientOriginalExtension();
-            if ($guidance->image != 'guidance.jpg') {
-                Storage::disk('guidance')->delete($guidance->image);
+            if ($newsletter->image != 'newsletter.jpg') {
+                Storage::disk('newsletter')->delete($newsletter->image);
+                Storage::disk('thumbnail')->delete($newsletter->image);
             }
-            Image::make($request->file('image'))->resize(800, null, function ($constraint){
-                $constraint->aspectRatio();
-            })->fit(800, 600, null, 'top')->save(public_path('images/guidances/' . $filename));
-            $guidance->image = $filename;
+            Image::make($request->file('image'))->save(public_path('images/newsletters/' . $filename));
+            Image::make($request->file('image'))->resize(350, 495.8)->save(public_path('images/thumbnails/' . $filename));
+            $newsletter->image = $filename;
         } else {
-            $guidance->image = $guidance->image;
+            $newsletter->image = $newsletter->image;
         }
-        $guidance->url = $request->url;
-        $guidance->slug =  slug_th($request->guidance);
-        $guidance->save();
+        $newsletter->slug =  slug_th($request->newsletter);
+        $newsletter->save();
         return back()->with([
           'alert' => 'alert-success',
           'message' => 'บันทึกข้อมูลเรียบร้อย!',
@@ -135,13 +132,12 @@ class GuidanceController extends Controller
      */
     public function destroy($id)
     {
-        $guidance = Guidance::find($id);
-        if ($guidance->image != 'guidance.jpg') {
-            Storage::disk('guidance')->delete($guidance->image);
-        } else {
-            $guidance->image = $guidance->image;
+        $newsletter = Newsletter::find($id);
+        if ($newsletter->image != 'newsletter.jpg') {
+            Storage::disk('newsletter')->delete($newsletter->image);
+            Storage::disk('thumbnail')->delete($newsletter->image);
         }
-        $guidance->delete();
+        $newsletter->delete();
         return back()->with([
            'alert' => 'alert-success',
            'message' => 'ลบข้อมูลเรียบร้อย!',
