@@ -281,16 +281,24 @@
                     <div class="table-responsive wow fadeIn">
                         <table class="table">
                             <tbody>
-                                @foreach ($files->sortByDesc('created_at')->slice(0,8) as $key => $file)
+                                @foreach ($files->sortByDesc('created_at')->slice(0,7) as $key => $file)
                                 <tr>
-                                    <td>
-                                        <h5 class="mb-0">{{$file->title}}</h5>
+                                    <td width="90%">
+                                        <h5 class="mb-0">
+                                                @if ($loop->first)
+                                                <i class="fas fa-thumbtack faa-vertical animated"></i>
+                                                @endif
+                                                 {{$file->title}}
+                                        </h5>
                                         <ul class="list-inline text-muted small">
-                                            <li class="list-inline-item"><i class="far fa-user"></i> {{'ชื่อไฟล์: '.$file->file}}</li>
+                                            <li class="list-inline-item"><i class="far fa-user"></i>
+                                                {{'ชื่อไฟล์: '.$file->file}}</li>
                                             <li class="list-inline-item"><i class="far fa-calendar-alt"></i>
                                                 {{date_th($file->created_at)}}</li>
+                                            <li class="list-inline-item"><i class="far fa-folder-open"></i>
+                                                {{$file->document->document}}</li>
                                         </ul>
-                                    </td>
+                                    </td width="10%">
                                     <td class="text-center"><a class="btn btn-secondary btn-sm"
                                             href="{{ url('ไฟล์/'.$file->slug)}}" role="button" aria-pressed="true"><i
                                                 class="fas fa-download faa-float animated"></i> ดาวน์โหลด</a></td>
@@ -321,7 +329,7 @@
                                 <a href="{{ asset('images/newsletters/'.$newsletter->image)}}" data-toggle="lightbox">
                                     <img class="d-block w-100" src="{{ asset('images/thumbnails/'.$newsletter->image)}}"
                                         alt="{{$newsletter->newsletter}}">
-                                <p class="text-muted mt-2">{{$newsletter->newsletter}}</p>
+                                    <p class="text-muted mt-2">{{$newsletter->newsletter}}</p>
                                 </a>
                             </div>
                             @endforeach
@@ -329,7 +337,8 @@
                     </div>
                     <ol class="carousel-indicators">
                         @foreach ($newsletters->where('status','1') as $key => $value)
-                        <li data-target="#newsletter" data-slide-to="{{ $loop->index }}" class="{{ $loop->first ? 'active' : ''}}"></li>
+                        <li data-target="#newsletter" data-slide-to="{{ $loop->index }}"
+                            class="{{ $loop->first ? 'active' : ''}}"></li>
                         @endforeach
                     </ol>
                 </div>
@@ -571,8 +580,8 @@
     });
 
     $(document).on('click', '[data-toggle="lightbox"]', function (event) {
-    event.preventDefault();
-    $(this).ekkoLightbox();
-  });
+        event.preventDefault();
+        $(this).ekkoLightbox();
+    });
 </script>
 @endpush
